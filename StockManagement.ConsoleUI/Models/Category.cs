@@ -1,7 +1,24 @@
-﻿namespace StockManagement.ConsoleUI.Models;
+﻿
+using System.Xml.Linq;
 
-public record Category(
-    int Id,
-    string Name,
-    string Descriptions
-    );
+namespace StockManagement.ConsoleUI.Models;
+
+public sealed class Category : Entity<int>
+{
+
+    public Category()
+    {
+
+    }
+
+    public Category(int id, string name, string description)
+    {
+        Id = id;
+        Name = name;
+        Description = description;
+    }
+
+
+    public string Description { get; set; }
+
+}
